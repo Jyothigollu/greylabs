@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import dj_database_url # type: ignore
 from dotenv import load_dotenv
+import django_heroku
 
 
 # Load environment variables from a .env file if present
@@ -149,7 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Add this line if not already present
 
@@ -158,6 +159,8 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
