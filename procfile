@@ -1,0 +1,1 @@
+web gunicorn GreyLabsApi.wsgi:application --log-file -
