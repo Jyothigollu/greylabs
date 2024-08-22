@@ -1,1 +1,1 @@
-web: gunicorn GreyLabsApi.wsgi --log-file -
+web: gunicorn GreyLabsAPI.wsgi --log-file -
