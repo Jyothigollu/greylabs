@@ -101,10 +101,11 @@ WSGI_APPLICATION = 'GreyLabsAPI.wsgi.application'
     }
 }"""
 
+
 DATABASES = {}
 
 # Check if DATABASE_URL environment variable is set (for production)
-if os.getenv('DATABASE_URL'):
+if os.getenv('postgres://u87qq137humq7h:p0f4166af353e5e458792ab489b17c37bd3231e3e0ff92eb3776483d0a86c0a9d@c5flugvup2318r.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d2sk312k2h64lp'):
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 else:
     # Fallback to local MySQL settings (for development)
