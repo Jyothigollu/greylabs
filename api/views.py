@@ -3,6 +3,11 @@ from .models import PatientRecords, Department
 from .serializers import PatientRecordsSerializer, DepartmentSerializer
 from .permissions import IsPatientOrReadOnly, IsDoctorOrReadOnly
 from rest_framework.permissions import IsAuthenticated
+from django.http import HttpResponse
+
+def home_view(request):
+    return HttpResponse("Welcome to Grey Scientific Labs API!")
+
 
 class DepartmentListCreateView(generics.ListCreateAPIView):
     queryset = Department.objects.all()
